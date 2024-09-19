@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgoq1nu53tdnr"]
+
+[ext_resource type="Script" path="res://Levels/world.gd" id="1_lgtmx"]
+[ext_resource type="Texture2D" uid="uid://hgado2n26bvb" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="2_kq0i8"]
+[ext_resource type="Texture2D" uid="uid://b40cuh64cvkpb" path="res://addons/kenney_prototype_textures/orange/texture_05.png" id="3_i2m0v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7gvlr"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_qqckf"]
+sky_material = SubResource("ProceduralSkyMaterial_7gvlr")
+
+[sub_resource type="Environment" id="Environment_ir2cq"]
+background_mode = 2
+sky = SubResource("Sky_qqckf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cx8ln"]
+albedo_texture = ExtResource("3_i2m0v")
+uv1_scale = Vector3(100, 100, 100)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vugf"]
+albedo_texture = ExtResource("2_kq0i8")
+uv1_scale = Vector3(100, 9.9, 1)
+uv1_triplanar = true
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_lgtmx")
+
+[node name="env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0491562, 3.8147e-06, -0.066185)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_ir2cq")
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="stage"]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, -0.0279236, -0.0745201, -0.0252342)
+material_override = SubResource("StandardMaterial3D_cx8ln")
+use_collision = true
+
+[node name="Wall" type="CSGBox3D" parent="stage"]
+transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 1, 0.0242157, 5, 49.8674)
+material = SubResource("StandardMaterial3D_0vugf")
+
+[node name="Wall2" type="CSGBox3D" parent="stage"]
+transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 1, 0.024, 5, -50)
+material = SubResource("StandardMaterial3D_0vugf")
+
+[node name="Wall3" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-4.37114e-06, 0, 1, 0, 10, 0, -100, 0, -4.37114e-08, -50, 5, 0)
+material = SubResource("StandardMaterial3D_0vugf")
+
+[node name="Wall4" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-4.37114e-06, 0, 1, 0, 10, 0, -100, 0, -4.37114e-08, 49.9188, 5.00001, -0.2099)
+material = SubResource("StandardMaterial3D_0vugf")

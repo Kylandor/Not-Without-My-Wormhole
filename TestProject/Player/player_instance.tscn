@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://rg5i4vls1a7d"]
+
+[ext_resource type="Script" path="res://Player/Player Scripts/player_instance.gd" id="1_d1mh6"]
+[ext_resource type="Texture2D" uid="uid://cvt347oafaanp" path="res://Player/player_skin_FINAL.jpg" id="2_cth8r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ycri2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ki1xm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djfbc"]
+albedo_texture = ExtResource("2_cth8r")
+uv1_triplanar_sharpness = 9.51365
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2i5tk"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Player Instance" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.49346, 0)
+collision_layer = 2
+script = ExtResource("1_d1mh6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ycri2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69849, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.853551, 0, 0.52101, 0, 1, 0, -0.52101, 0, -0.853551, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ki1xm")
+surface_material_override/0 = SubResource("StandardMaterial3D_djfbc")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_2i5tk")

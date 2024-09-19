@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cge0lnh0bttvc"]
+
+[ext_resource type="Script" path="res://UI/start_menu.gd" id="1_5dsns"]
+
+[node name="Start Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dsns")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 230.0
+offset_right = 742.0
+offset_bottom = 397.0
+
+[node name="Host Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 9.0
+offset_right = 306.0
+offset_bottom = 38.0
+text = "Host"
+
+[node name="Join Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 112.0
+offset_right = 306.0
+offset_bottom = 139.0
+text = "Join"
+
+[node name="IP Address" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 73.0
+offset_right = 308.0
+offset_bottom = 104.0
+placeholder_text = "Enter IP "
