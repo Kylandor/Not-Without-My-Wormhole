@@ -47,10 +47,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.029
-offset_left = 473.0
-offset_top = 346.0
-offset_right = 651.971
-offset_bottom = 435.938
+offset_left = 595.0
+offset_top = 231.0
+offset_right = 773.971
+offset_bottom = 320.938
 text = "Select Audio Output"
 
 [node name="input device" type="MenuButton" parent="."]
@@ -58,8 +58,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.029
-offset_left = 470.0
-offset_top = 260.0
-offset_right = 648.971
-offset_bottom = 349.938
+offset_left = 331.0
+offset_top = 233.0
+offset_right = 509.971
+offset_bottom = 322.938
 text = "Select Audio Input"

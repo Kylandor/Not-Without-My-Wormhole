@@ -15,6 +15,10 @@ run/main_scene="res://UI/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/enable_input=true
+
 [autoload]
 
 ConnectionOptions="*res://Networking/connection_options.gd"

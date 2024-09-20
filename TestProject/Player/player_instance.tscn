@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://rg5i4vls1a7d"]
+[gd_scene load_steps=8 format=3 uid="uid://rg5i4vls1a7d"]
 
 [ext_resource type="Script" path="res://Player/Player Scripts/player_instance.gd" id="1_d1mh6"]
 [ext_resource type="Texture2D" uid="uid://cvt347oafaanp" path="res://Player/player_skin_FINAL.jpg" id="2_cth8r"]
+[ext_resource type="PackedScene" uid="uid://lxj6b5c6i2dt" path="res://Audio/audio_controller.tscn" id="3_fcvj2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ycri2"]
 
@@ -37,3 +38,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_djfbc")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_2i5tk")
+
+[node name="audio_controller" parent="." instance=ExtResource("3_fcvj2")]

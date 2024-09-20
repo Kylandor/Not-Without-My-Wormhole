@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxj6b5c6i2dt"]
+
+[ext_resource type="Script" path="res://Audio/audio_controller.gd" id="1_6mf5c"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_mcvpl"]
+buffer_length = 1.04
+
+[node name="audio_controller" type="Node"]
+script = ExtResource("1_6mf5c")
+
+[node name="input" type="AudioStreamPlayer" parent="."]
+bus = &"Record "
+
+[node name="output" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamGenerator_mcvpl")
+unit_size = 3.6
+autoplay = true

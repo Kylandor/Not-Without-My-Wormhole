@@ -28,6 +28,7 @@ func basic_host():
 	enet_peer.create_server(PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_disconnected.connect(delete_player)
 	spawn_level()
 	add_player(multiplayer.get_unique_id())
 	
@@ -43,3 +44,8 @@ func add_player(peer_id):
 func spawn_level():
 	var stage = Stage.instantiate()
 	add_child(stage)
+	
+func delete_player(peer_id):
+	var player = get_node_or_null(str(peer_id))
+	if player != null:
+		player.queue_free()

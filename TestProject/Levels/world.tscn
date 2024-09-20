@@ -42,23 +42,61 @@ environment = SubResource("Environment_ir2cq")
 
 [node name="stage" type="Node3D" parent="."]
 
-[node name="floor" type="CSGBox3D" parent="stage"]
+[node name="landscape" type="Node3D" parent="stage"]
+
+[node name="floor" type="CSGBox3D" parent="stage/landscape"]
 transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, -0.0279236, -0.0745201, -0.0252342)
 material_override = SubResource("StandardMaterial3D_cx8ln")
 use_collision = true
 
-[node name="Wall" type="CSGBox3D" parent="stage"]
+[node name="Wall" type="CSGBox3D" parent="stage/landscape"]
 transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 1, 0.0242157, 5, 49.8674)
 material = SubResource("StandardMaterial3D_0vugf")
 
-[node name="Wall2" type="CSGBox3D" parent="stage"]
+[node name="Wall2" type="CSGBox3D" parent="stage/landscape"]
 transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 1, 0.024, 5, -50)
 material = SubResource("StandardMaterial3D_0vugf")
 
-[node name="Wall3" type="CSGBox3D" parent="stage"]
+[node name="Wall3" type="CSGBox3D" parent="stage/landscape"]
 transform = Transform3D(-4.37114e-06, 0, 1, 0, 10, 0, -100, 0, -4.37114e-08, -50, 5, 0)
 material = SubResource("StandardMaterial3D_0vugf")
 
-[node name="Wall4" type="CSGBox3D" parent="stage"]
+[node name="Wall4" type="CSGBox3D" parent="stage/landscape"]
 transform = Transform3D(-4.37114e-06, 0, 1, 0, 10, 0, -100, 0, -4.37114e-08, 49.9188, 5.00001, -0.2099)
 material = SubResource("StandardMaterial3D_0vugf")
+
+[node name="entities" type="Node3D" parent="stage"]
+
+[node name="house" type="Node3D" parent="stage/entities"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, -29.73, 3.42706, -25.572)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -1, 0, 10, -4.37114e-08, -29.73, 7.92402, -20.6963)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -1, 0, 10, -4.37114e-08, -29.73, 7.92402, -20.6963)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, -29.7395, 3.39744, -16.1435)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(-4.37114e-07, 0, 1, 0, 10, 0, -10, 0, -4.37114e-08, -25.1683, 3.42706, -21.0211)
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 10, 0, -3, 0, -4.37114e-08, -34.2912, 3.42706, -23.7339)
+use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 10, 0, -3, 0, -4.37114e-08, -34.2859, 3.42706, -18.1338)
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="stage/entities/house"]
+transform = Transform3D(5.73206e-15, 4.37114e-07, 1, 3, -4.37114e-07, 0, 1.31134e-07, 10, -4.37114e-08, -34.2912, 6.71237, -20.7487)
+use_collision = true
