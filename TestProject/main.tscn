@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5r65rah6rtff"]
+[gd_scene load_steps=2 format=3 uid="uid://c5r65rah6rtff"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_oci7b"]
-[ext_resource type="Script" path="res://Networking/steam_networking.gd" id="2_ev8of"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_oci7b")
@@ -9,6 +8,3 @@ script = ExtResource("1_oci7b")
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Player/player_instance.tscn", "res://Levels/world.tscn")
 spawn_path = NodePath("..")
-
-[node name="SteamMultiplayerNode" type="Node" parent="."]
-script = ExtResource("2_ev8of")
